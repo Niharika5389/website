@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - Study Focus</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1>Calendar</h1>
+        </header>
+        
+        <main>
+            <section class="calendar-section">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="btn"><i class="fas fa-chevron-left"></i></button>
+                    <h2 id="currentMonth">September 2023</h2>
+                    <button id="nextMonth" class="btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="calendar-grid">
+                    <div class="weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div id="calendarDays" class="days">
+                        <!-- Days will be added dynamically -->
+                    </div>
+                </div>
+                
+                <div id="eventPopup" class="event-popup">
+                    <div class="event-popup-content">
+                        <h3 id="selectedDateDisplay">Selected Date</h3>
+                        <div class="input-type-toggle">
+                            <button id="eventMode" class="mode-btn active">Event</button>
+                            <button id="taskMode" class="mode-btn">Task</button>
+                        </div>
+                        <div class="event-input">
+                            <input type="text" id="eventTitle" placeholder="Event title">
+                            <div class="event-time-container">
+                                <input type="time" id="eventTime">
+                                <label class="full-day-label">
+                                    <input type="checkbox" id="eventFullDay">
+                                    <span>Full Day Event</span>
+                                </label>
+                            </div>
+                            <button id="addEvent" class="btn">Add Event</button>
+                        </div>
+                        <div class="task-input" style="display: none;">
+                            <input type="text" id="taskTitle" placeholder="Task title">
+                            <textarea id="taskDescription" placeholder="Task description (optional)"></textarea>
+                            <div class="task-options">
+                                <label class="full-day-label">
+                                    <input type="checkbox" id="taskFullDay">
+                                    <span>Full Day Task</span>
+                                </label>
+                            </div>
+                            <button id="addTask" class="btn">Add Task</button>
+                        </div>
+                        <div id="itemsList" class="items-list">
+                            <!-- Events and tasks will be added dynamically -->
+                        </div>
+                        <button id="closePopup" class="btn">Close</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="calendar.js"></script>
+</body>
+</html> 
